@@ -1,0 +1,7 @@
+#L. The Brothers
+F1,S1=map(str,input().split())
+F2,S2=map(str,input().split())
+if S1!=S2:
+    print("NOT")
+else:
+    print("ARE Brothers")    

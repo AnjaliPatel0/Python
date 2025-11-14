@@ -1,6 +1,8 @@
 #C. Simple Calculator
-X, Y = input().split()
-X = int(X)
-Y = int(Y)
-print("X " "+ " "Y " "=",X+Y)
-# print()
+
+a,b = input().split()
+a = int(a)
+b = int(b)
+print(a,"+",b,"=",a+b)
+print(a,"*",b,"=",a*b)
+print(a,"-",b,"=",a-b)

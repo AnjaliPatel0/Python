@@ -1,0 +1,6 @@
+#F. Digits Summation
+N, M= map(int, input().split())
+last_N = N%10
+last_M = M%10
+
+print( last_N + last_M)
