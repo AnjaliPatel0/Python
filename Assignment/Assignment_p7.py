@@ -1,65 +1,33 @@
 """
 CURRENCY
 """
-amount = int(input("Enter amount present: "))
-denomination = int(input("Enter denomination: "))
-denominations = [0,0,0,0,0,0] #50,20,10,5,2,1
-ansFormat = [50,20,10,5,2,1] #50,20,10,5,2,1
-curr = amount
+amount = int(input())
+start = int(input())
 
-match denomination:
+denominations = [100, 50, 20, 10, 5, 2, 1]
+
+match start:
+    case 100:
+        index = 0
     case 50:
-        denominations[0] = curr // 50
-        curr %= 50
-        denominations[1] = curr // 20
-        curr %= 20
-        denominations[2] = curr // 10
-        curr %= 10
-        denominations[3] = curr // 5
-        curr %= 5
-        denominations[4] = curr // 2
-        curr %= 2
-        denominations[5] = curr // 1
-        curr %= 1
-
+        index = 1
     case 20:
-        denominations[1] = curr // 20
-        curr %= 20
-        denominations[2] = curr // 10
-        curr %= 10
-        denominations[3] = curr // 5
-        curr %= 5
-        denominations[4] = curr // 2
-        curr %= 2
-        denominations[5] = curr // 1
-        curr %= 1
-
+        index = 2
     case 10:
-        denominations[2] = curr // 10
-        curr %= 10
-        denominations[3] = curr // 5
-        curr %= 5
-        denominations[4] = curr // 2
-        curr %= 2
-        denominations[5] = curr // 1
-        curr %= 1
-
+        index = 3
     case 5:
-        denominations[3] = curr // 5
-        curr %= 5
-        denominations[4] = curr // 2
-        curr %= 2
-        denominations[5] = curr // 1
-        curr %= 1
-
+        index = 4
     case 2:
-        denominations[4] = curr // 2
-        curr %= 2
-        denominations[5] = curr // 1
-        curr %= 1
-
+        index = 5
     case 1:
-        denominations[5] = curr // 1
-        curr %= 1
-for i in range(len(denominations)):
-   print("{} rupees note: {}".format(ansFormat[i], denominations[i]))
+        index = 6
+    
+    case _:
+        print("Invalid denomination")
+        exit()
+
+# Now calculate number of notes from the starting denomination
+for d in denominations[index:]:   #it will slice the denomination list
+    notes = amount // d
+    amount = amount % d
+    print(f"{d} rupees note: {notes}")
