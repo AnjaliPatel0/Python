@@ -1,12 +1,16 @@
 #J. Lucky Array
 n=int(input())
-a=list(map(int,input().split()))
-minimum = a[0]        # assume first element is minimum
-count=0
-for i in range(1, n):
-    if a[i] < minimum:
-        count+= a[i]
-if count%2==0:
+nums=list(map(int,input().split()))
+
+minEle = nums[0]
+for i in range(1,n):
+    minEle = min(minEle,nums[i])
+count = 0
+for i in nums:
+    if i == minEle:
+        count += 1
+if count % 2 == 0:
     print("Unlucky")
 else:
-    print("Lucky")        
+    print("L" \
+    "ucky")     
